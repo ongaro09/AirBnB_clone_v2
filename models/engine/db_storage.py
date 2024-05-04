@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""DBStorage module for HBNB project"""
+#!/usr/bin/python3
+"""
+Contains class DBStorage
+"""
+
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, scoped_session
-from models.base_model import BaseModel, Base
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
+from datetime import datetime
+import models
+from os import getenv
+import sqlalchemy
+from sqlalchemy import Column, String, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+import uuid
 
 
 class DBStorage:
